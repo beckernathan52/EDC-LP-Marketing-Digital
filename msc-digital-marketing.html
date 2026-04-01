@@ -148,11 +148,6 @@ body {
   height: 8px;
   background: white;
   border-radius: 50%;
-  animation: pulse-dot 2s ease-in-out infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
 }
 
 .hero-title {
@@ -230,16 +225,6 @@ body {
   padding: 32px 28px;
   box-shadow: var(--shadow-lg);
   position: relative;
-}
-.form-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 28px;
-  right: 28px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--magenta), var(--blue-light));
-  border-radius: 0 0 4px 4px;
 }
 .form-title {
   font-family: 'Poppins', sans-serif;
@@ -574,13 +559,57 @@ body {
   margin: 0 auto;
 }
 
+/* ===== CTAs ===== */
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+.btn-hero-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 28px;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255,255,255,0.7);
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s;
+  letter-spacing: 0.3px;
+}
+.btn-hero-outline:hover { background: rgba(255,255,255,0.12); border-color: white; }
+.section-cta {
+  margin-top: 40px;
+  text-align: center;
+}
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 40px;
+  background: var(--magenta);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.25s;
+}
+.btn-cta:hover { background: var(--magenta-dark); }
+
 /* ===== CAMPUS ===== */
 .campus { background: var(--bg-white); }
 .campus-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
-  align-items: center;
+  align-items: start;
 }
 .campus-text p {
   font-size: 15px;
@@ -744,6 +773,8 @@ body {
 
   .campus-grid { grid-template-columns: 1fr; gap: 24px; }
   .campus-text p { font-size: 14px; }
+  .hero-cta-group { gap: 10px; }
+  .btn-hero-outline { font-size: 13px; padding: 10px 20px; }
 
   .footer-cta { padding: 48px 16px; }
   .footer-cta h2 { font-size: 22px; }
@@ -953,6 +984,7 @@ body {
         <h3>Profil des candidats</h3>
         <div class="accent-line"></div>
         <p>Étudiants de niveau <strong>BAC+3</strong> ou <strong>BAC+4</strong> (ou équivalents internationaux) souhaitant se spécialiser dans le marketing digital.</p>
+        <a href="#form-section" class="btn-cta" style="margin-top:24px; width:100%; text-align:center; justify-content:center;">DEMANDE D'INFOS</a>
       </div>
     </div>
   </div>
@@ -1037,12 +1069,13 @@ body {
 <!-- CAMPUS -->
 <section class="section campus">
   <div class="section-inner">
-    <div class="section-tag">Campus</div>
-    <h2 class="section-title">Votre Campus<br>à <span>La Défense</span></h2>
     <div class="campus-grid">
       <div class="campus-text">
+        <div class="section-tag">Campus</div>
+        <h2 class="section-title">Votre Campus<br>à <span>La Défense</span></h2>
         <p>Un campus à Paris la Défense-Puteaux : Au cœur de la Défense et de la ville, il est à proximité de nombreuses infrastructures sportives et culturelles.</p>
         <p>À la pointe de l'enseignement « phygital », il offre des espaces de travail modulables favorisant collaboration, créativité et apprentissage. En accord avec nos valeurs, il a une faible empreinte carbone. Pour le bien-être et la qualité de travail de nos étudiants, chaque étage dispose de « learning bubbles ». Tableaux interactifs, installations vidéo sont les équipements du quotidien de chaque apprenant.</p>
+        <a href="#form-section" class="btn-cta">POSTULER EN LIGNE</a>
       </div>
       <div class="campus-video">
         <iframe src="https://www.youtube.com/embed/jMeHOAPMa3U?wmode=opaque" title="EDC Paris Business School - Campus" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -1061,20 +1094,6 @@ body {
   </div>
 </section>
 
-<!-- RGPD -->
-<section class="rgpd">
-  <div class="rgpd-inner">
-    <button class="rgpd-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
-      Protection des données personnelles
-    </button>
-    <div class="rgpd-content">
-      <p>Association EDC, école de Commerce privée française, accorde une grande importance à la protection de vos données à caractère personnel. Sur la base de votre consentement que vous manifestez en complétant ce formulaire, Association EDC recueille vos données à caractère personnel afin de traiter votre demande et vous contacter afin de vous communiquer des informations sur le programme grande école ainsi que des informations sur les actualités et événements de l'école correspondants à ce programme. Association EDC conservera vos données pour une durée n'excédant pas celle nécessaire à la finalité énoncée ci-dessus sans que cette durée puisse excéder 3 ans à compter de votre dernier contact avec Association EDC.</p>
-      <p>Conformément à la loi Informatique et Libertés du 6 janvier 1978 modifiée et au Règlement (UE) 2016/679 relatif à la protection des données à caractère personnel, vous disposez des droits suivants sur vos données : droit d'accès, droit de rectification, droit à l'effacement (droit à l'oubli), droit à la limitation du traitement, droit à la portabilité. Vous pourrez également retirer votre consentement à tout moment et sans frais et vous inscrire sur la liste d'opposition au démarchage téléphonique.</p>
-      <p>Pour exercer vos droits, merci d'adresser votre courrier RAR à l'adresse suivante : DPO Planeta Formation France, 70, Galerie des Damiers, 92415 Courbevoie ou à l'adresse électronique suivante rgpd@planetaformation.fr.</p>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer class="footer">
