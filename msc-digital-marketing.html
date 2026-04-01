@@ -698,16 +698,6 @@ body {
   margin-top: 12px;
 }
 
-/* ===== SCROLL ANIMATIONS ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ===== RESPONSIVE — 320px Mobile ===== */
 @media (max-width: 768px) {
@@ -945,7 +935,7 @@ body {
 </section>
 
 <!-- LES PLUS DU PROGRAMME -->
-<section class="section programme reveal">
+<section class="section programme">
   <div class="section-inner">
     <div class="section-tag">Programme</div>
     <h2 class="section-title">Les Plus du <span>Programme</span></h2>
@@ -969,7 +959,7 @@ body {
 </section>
 
 <!-- OBJECTIFS -->
-<section class="section objectifs reveal">
+<section class="section objectifs">
   <div class="section-inner">
     <div class="section-tag">Formation</div>
     <h2 class="section-title">Objectifs</h2>
@@ -1003,7 +993,7 @@ body {
 </section>
 
 <!-- ACCREDITATIONS -->
-<section class="section accreditations reveal">
+<section class="section accreditations">
   <div class="section-inner">
     <div class="section-tag" style="justify-content: center; width: 100%;">Qualité</div>
     <h2 class="section-title" style="text-align: center;">Nos <span>Accréditations</span></h2>
@@ -1019,7 +1009,7 @@ body {
 </section>
 
 <!-- CHIFFRES CLÉS -->
-<section class="section chiffres reveal">
+<section class="section chiffres">
   <div class="section-inner">
     <div class="section-tag" style="justify-content: center; width: 100%;">En chiffres</div>
     <h2 class="section-title" style="text-align: center;">Chiffres <span>Clés</span></h2>
@@ -1045,7 +1035,7 @@ body {
 </section>
 
 <!-- CAMPUS -->
-<section class="section campus reveal">
+<section class="section campus">
   <div class="section-inner">
     <div class="section-tag">Campus</div>
     <h2 class="section-title">Votre Campus<br>à <span>La Défense</span></h2>
@@ -1098,17 +1088,6 @@ window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 10);
 }, { passive: true });
 
-// Reveal on scroll
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-reveals.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
