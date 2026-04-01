@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSc Marketing Digital — EDC Paris Business School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --magenta: #DA0C77;
+  --magenta-dark: #B80A64;
+  --navy: #113A83;
+  --navy-deep: #020C36;
+  --blue-light: #0098DB;
+  --bg-light: #FAFAFB;
+  --bg-white: #FFFFFF;
+  --text-dark: #1A1A2E;
+  --text-mid: #4A4A6A;
+  --text-light: #7A7A9A;
+  --border: #E2E5ED;
+  --shadow-sm: 0 2px 8px rgba(17,58,131,0.06);
+  --shadow-md: 0 8px 32px rgba(17,58,131,0.10);
+  --shadow-lg: 0 16px 48px rgba(17,58,131,0.14);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-dark);
+  background: var(--bg-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--bg-white);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 0 var(--border);
+  transition: box-shadow 0.3s;
+}
+.header.scrolled { box-shadow: var(--shadow-sm); }
+.header-inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  background: var(--magenta);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  text-decoration: none;
+}
+.header-cta:hover { background: var(--magenta-dark); transform: translateY(-1px); }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 680px;
+  margin-top: 72px;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(17,58,131,0.85) 0%, rgba(2,12,54,0.75) 45%, rgba(218,12,119,0.65) 100%),
+    url('background hero section.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><pattern id="g" patternUnits="userSpaceOnUse" width="40" height="40"><path d="M0 40L40 0" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect fill="url(%23g)" width="200" height="200"/></svg>');
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 48px;
+  align-items: start;
+}
+.hero-content { padding-top: 12px; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: var(--magenta);
+  color: white;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(218,12,119,0.35);
+}
+.badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+.hero-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+.hero-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+  max-width: 540px;
+  margin-bottom: 40px;
+}
+
+/* Info pills */
+.info-pills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.pill {
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.30);
+  border-bottom: 2px solid rgba(0,152,219,0.7);
+  border-radius: var(--radius-md);
+  padding: 16px 14px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.pill:hover {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.45);
+  border-bottom-color: #DA0C77;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+}
+.pill-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(0,152,219,0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.pill-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--blue-light);
+  margin-bottom: 4px;
+}
+.pill-value {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.9);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ===== FORM CARD ===== */
+.form-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.form-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 28px;
+  right: 28px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--magenta), var(--blue-light));
+  border-radius: 0 0 4px 4px;
+}
+.form-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+  text-align: center;
+}
+.form-subtitle {
+  font-size: 13px;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 24px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.form-group {
+  margin-bottom: 12px;
+}
+.form-group label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-mid);
+  margin-bottom: 4px;
+  letter-spacing: 0.2px;
+}
+.form-group input,
+.form-group select {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  color: var(--text-dark);
+  background: var(--bg-white);
+  transition: all 0.2s;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-group select {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7"><path d="M1 1l5 5 5-5" stroke="%237A7A9A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--blue-light);
+  box-shadow: 0 0 0 3px rgba(0,152,219,0.1);
+}
+.form-group input::placeholder { color: var(--text-light); }
+
+.radio-group {
+  display: flex;
+  gap: 16px;
+  height: 40px;
+  align-items: center;
+}
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-dark);
+  cursor: pointer;
+  margin-bottom: 0;
+}
+.radio-group input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--magenta);
+  cursor: pointer;
+}
+
+.form-submit {
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(to right, #DA0C77 0%, #113A83 100%);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.form-submit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+.form-submit:hover { background: #007fb8; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,152,219,0.3); }
+.form-submit:hover::after { transform: translateX(100%); }
+
+/* ===== SECTIONS COMMON ===== */
+.section {
+  padding: 80px 40px;
+}
+.section-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--magenta);
+  margin-bottom: 12px;
+}
+.section-tag::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--magenta);
+  border-radius: 2px;
+}
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+.section-title span { color: var(--magenta); }
+
+/* ===== PROGRAMME SECTION ===== */
+.programme { background: var(--bg-white); }
+.programme-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 48px;
+  align-items: start;
+}
+.programme-list { list-style: none; }
+.programme-list li {
+  position: relative;
+  padding: 16px 0 16px 28px;
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  border-bottom: 1px solid var(--border);
+}
+.programme-list li:last-child { border-bottom: none; }
+.programme-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 24px;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, var(--blue-light), var(--magenta));
+  border-radius: 50%;
+}
+
+.profil-card {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.profil-card::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 80px;
+  height: 80px;
+  background: rgba(218,12,119,0.12);
+  border-radius: 50%;
+}
+.profil-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  position: relative;
+}
+.profil-card .accent-line {
+  width: 40px;
+  height: 3px;
+  background: var(--magenta);
+  border-radius: 3px;
+  margin-bottom: 16px;
+}
+.profil-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.9;
+  position: relative;
+}
+.profil-card .icon-user {
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* ===== OBJECTIFS ===== */
+.objectifs {
+  background: var(--bg-light);
+}
+.objectifs-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.objectifs-list li {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.objectifs-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+.objectifs-list li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--navy), var(--blue-light));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.objectifs-list li:hover::before { opacity: 1; }
+.obj-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, rgba(17,58,131,0.08), rgba(0,152,219,0.08));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.objectifs-list li p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+/* ===== ACCREDITATIONS ===== */
+.accreditations {
+  background: var(--bg-white);
+  text-align: center;
+}
+.accred-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.accred-logo {
+  width: 100px;
+  height: 56px;
+  background: var(--bg-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.accred-logo:hover {
+  border-color: var(--blue-light);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== CHIFFRES CLES ===== */
+.chiffres {
+  background: var(--bg-light);
+  text-align: center;
+}
+.chiffres-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+.chiffre-item {
+  padding: 8px 0;
+}
+.chiffre-number {
+  font-family: 'Poppins', sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--magenta);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.chiffre-number sup {
+  font-size: 20px;
+  vertical-align: super;
+}
+.chiffre-label {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.5;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* ===== CAMPUS ===== */
+.campus { background: var(--bg-white); }
+.campus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.campus-text p {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+.campus-video {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 16/9;
+  background: var(--navy-deep);
+}
+.campus-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===== FOOTER CTA ===== */
+.footer-cta {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 50%, var(--magenta) 100%);
+  padding: 64px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.footer-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><pattern id="d" patternUnits="userSpaceOnUse" width="30" height="30"><circle cx="15" cy="15" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect fill="url(%23d)" width="200" height="200"/></svg>');
+}
+.footer-cta-inner {
+  position: relative;
+  z-index: 2;
+}
+.footer-cta h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+.footer-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 40px;
+  background: white;
+  color: var(--navy);
+  border: none;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+}
+.footer-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.footer-cta-btn svg { transition: transform 0.3s; }
+.footer-cta-btn:hover svg { transform: translateX(3px); }
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--navy-deep);
+  padding: 20px 40px;
+  text-align: center;
+}
+.footer p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ===== RGPD ===== */
+.rgpd {
+  background: var(--bg-light);
+  padding: 32px 40px;
+  border-top: 1px solid var(--border);
+}
+.rgpd-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.rgpd-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 0;
+}
+.rgpd-toggle svg { transition: transform 0.3s; }
+.rgpd-toggle.open svg { transform: rotate(180deg); }
+.rgpd-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.rgpd-content.open { max-height: 600px; }
+.rgpd-content p {
+  font-size: 11px;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE — 320px Mobile ===== */
+@media (max-width: 768px) {
+  .header { height: 60px; }
+  .header-inner { padding: 0 16px; }
+  .header-cta { display: none; }
+  .logo img { height: 34px; }
+
+  .hero { margin-top: 60px; min-height: auto; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding: 32px 16px;
+    gap: 32px;
+  }
+  .hero-title { font-size: 32px; }
+  .hero-subtitle { font-size: 15px; }
+  .hero-desc { font-size: 14px; margin-bottom: 28px; }
+  .info-pills { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .pill { padding: 12px 10px; }
+  .pill-label { font-size: 9px; }
+  .pill-value { font-size: 11px; }
+  .pill-icon { width: 26px; height: 26px; font-size: 13px; margin-bottom: 8px; }
+
+  .form-card { padding: 24px 16px; border-radius: var(--radius-md); }
+  .form-card::before { left: 16px; right: 16px; }
+  .form-title { font-size: 18px; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  .form-group input, .form-group select { height: 38px; font-size: 13px; }
+
+  .section { padding: 48px 16px; }
+  .section-title { font-size: 26px; }
+
+  .programme-grid { grid-template-columns: 1fr; gap: 32px; }
+  .programme-list li { font-size: 14px; padding: 14px 0 14px 24px; }
+
+  .objectifs-list { grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .accred-logos { gap: 16px; }
+  .accred-logo { width: 80px; height: 48px; font-size: 9px; }
+
+  .chiffres-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .chiffre-number { font-size: 32px; }
+  .chiffre-label { font-size: 12px; }
+
+  .campus-grid { grid-template-columns: 1fr; gap: 24px; }
+  .campus-text p { font-size: 14px; }
+
+  .footer-cta { padding: 48px 16px; }
+  .footer-cta h2 { font-size: 22px; }
+  .footer-cta-btn { padding: 14px 28px; font-size: 13px; }
+
+  .footer { padding: 16px; }
+  .rgpd { padding: 24px 16px; }
+}
+
+@media (max-width: 320px) {
+  .hero-inner { padding: 24px 12px; }
+  .hero-title { font-size: 28px; }
+  .hero-desc { font-size: 13px; }
+  .info-pills { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .pill { padding: 10px 8px; }
+
+  .section { padding: 40px 12px; }
+  .section-title { font-size: 22px; }
+
+  .objectifs-list { grid-template-columns: 1fr; }
+
+  .form-card { padding: 20px 12px; }
+  .form-group { margin-bottom: 10px; }
+
+  .chiffres-grid { gap: 16px; }
+  .chiffre-number { font-size: 28px; }
+
+  .footer-cta h2 { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="top">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <img src="Logo EDC.png" alt="EDC Paris Business School" height="44" style="display:block;">
+    </a>
+    <a href="#form-section" class="header-cta">
+      Demande d'infos
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="form-section">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="badge">RENTRÉE Mars 2026 — Septembre 2026</div>
+      <h1 class="hero-title">Marketing<br>Digital</h1>
+      <p class="hero-subtitle">Master of Science (M.Sc In)</p>
+      <p class="hero-desc">Devenez un expert de l'e-marketing et de la stratégie web dans l'univers du digital. Apprenez à améliorer la performance des entreprises avec les outils d'aujourd'hui et les innovations de demain.</p>
+      <div class="info-pills">
+        <div class="pill">
+          <div class="pill-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3.33 1.67 8.67 1.67 12 0v-5"/></svg>
+          </div>
+          <div class="pill-label">Diplôme</div>
+          <div class="pill-value">VISA Bac +5, Titre RNCP Niveau 7</div>
+        </div>
+        <div class="pill">
+          <div class="pill-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="pill-label">Durée</div>
+          <div class="pill-value">1 ou 2 ans</div>
+        </div>
+        <div class="pill">
+          <div class="pill-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div class="pill-label">ECTS</div>
+          <div class="pill-value">120 crédits ECTS</div>
+        </div>
+        <div class="pill">
+          <div class="pill-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+          </div>
+          <div class="pill-label">Format</div>
+          <div class="pill-value">Initial ou alternance selon le profil</div>
+        </div>
+        <div class="pill">
+          <div class="pill-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="pill-label">Langue</div>
+          <div class="pill-value">Français</div>
+        </div>
+        <div class="pill">
+          <div class="pill-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="pill-label">Admission</div>
+          <div class="pill-value">À partir de Bac+3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-card">
+      <h2 class="form-title">Demande d'informations</h2>
+      <p class="form-subtitle">Recevez notre brochure détaillée</p>
+      <form onsubmit="event.preventDefault();">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="nombre" placeholder="Votre prénom" required>
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="apellidos" placeholder="Votre nom" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Sexe</label>
+          <div class="radio-group">
+            <label><input type="radio" name="sexo" value="Homme" required> Homme</label>
+            <label><input type="radio" name="sexo" value="Femme"> Femme</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="age">Âge</label>
+            <select id="age" name="edad0" required>
+              <option value="" disabled selected>Sélectionnez</option>
+              <option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option><option>32</option><option>33</option><option>34</option><option>35</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pays">Pays de résidence</label>
+            <select id="pays" name="pais_de_residencia" required>
+              <option value="" disabled selected>Sélectionnez</option>
+              <option value="France">France</option>
+              <option value="Belgium">Belgique</option>
+              <option value="Switzerland">Suisse</option>
+              <option value="Canada">Canada</option>
+              <option value="Morocco">Maroc</option>
+              <option value="Tunisia">Tunisie</option>
+              <option value="Senegal">Sénégal</option>
+              <option value="Cote D'ivoire">Côte d'Ivoire</option>
+              <option value="Algeria">Algérie</option>
+              <option value="Cameroon">Cameroun</option>
+              <option value="Germany">Allemagne</option>
+              <option value="United Kingdom">Royaume-Uni</option>
+              <option value="United States">États-Unis</option>
+              <option value="Other">Autre</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="telefono" placeholder="+33..." required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cp">Code Postal</label>
+          <input type="text" id="cp" name="prefix" placeholder="Code postal" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="niveau">Niveau d'études</label>
+            <select id="niveau" name="nivel_de_estudios" required>
+              <option value="" disabled selected>Sélectionnez</option>
+              <option value="Bac+3">Bac+3</option>
+              <option value="Bac+4">Bac+4</option>
+              <option value="Bac+5">Bac+5</option>
+              <option value="+Bac+5">+Bac+5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="programme">Programme</label>
+            <select id="programme" name="idProduct">
+              <option value="MSc Marketing Digital Année 1">MSc Marketing Digital Année 1</option>
+              <option value="MSc Marketing Digital Année 2">MSc Marketing Digital Année 2</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="form-submit">ENVOYER</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- LES PLUS DU PROGRAMME -->
+<section class="section programme reveal">
+  <div class="section-inner">
+    <div class="section-tag">Programme</div>
+    <h2 class="section-title">Les Plus du <span>Programme</span></h2>
+    <div class="programme-grid">
+      <ul class="programme-list">
+        <li>Une formation à 360° sur tous les leviers digitaux.</li>
+        <li>Des intervenants professionnels issus de l'écosystème digital.</li>
+        <li>Une approche pratique et technique pour une maîtrise transversale des leviers du digital (data, intelligence artificielle...).</li>
+        <li>Acquérir les savoirs, les outils et les méthodes de travail pour devenir un manager capable de construire une stratégie marketing digitale.</li>
+      </ul>
+      <div class="profil-card">
+        <div class="icon-user">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>Profil des candidats</h3>
+        <div class="accent-line"></div>
+        <p>Étudiants de niveau <strong>BAC+3</strong> ou <strong>BAC+4</strong> (ou équivalents internationaux) souhaitant se spécialiser dans le marketing digital.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIFS -->
+<section class="section objectifs reveal">
+  <div class="section-inner">
+    <div class="section-tag">Formation</div>
+    <h2 class="section-title">Objectifs</h2>
+    <ul class="objectifs-list">
+      <li>
+        <div class="obj-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <p>Acquérir les savoirs, les outils et les méthodes de travail pour devenir un manager capable de construire une stratégie marketing digitale.</p>
+      </li>
+      <li>
+        <div class="obj-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <p>Comprendre comment concevoir un site internet, mettre en place une stratégie de contenu.</p>
+      </li>
+      <li>
+        <div class="obj-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </div>
+        <p>Activer une communication sur les réseaux sociaux.</p>
+      </li>
+      <li>
+        <div class="obj-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <p>Mesurer le ROI des actions avec les outils de web analytics.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ACCREDITATIONS -->
+<section class="section accreditations reveal">
+  <div class="section-inner">
+    <div class="section-tag" style="justify-content: center; width: 100%;">Qualité</div>
+    <h2 class="section-title" style="text-align: center;">Nos <span>Accréditations</span></h2>
+    <div class="accred-logos">
+      <div class="accred-logo">CGE</div>
+      <div class="accred-logo">AACSB</div>
+      <div class="accred-logo">EFMD</div>
+      <div class="accred-logo">AMBA</div>
+      <div class="accred-logo">UGEI</div>
+      <div class="accred-logo">France C.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHIFFRES CLÉS -->
+<section class="section chiffres reveal">
+  <div class="section-inner">
+    <div class="section-tag" style="justify-content: center; width: 100%;">En chiffres</div>
+    <h2 class="section-title" style="text-align: center;">Chiffres <span>Clés</span></h2>
+    <div class="chiffres-grid">
+      <div class="chiffre-item">
+        <div class="chiffre-number">17 000 m<sup>2</sup></div>
+        <div class="chiffre-label">pour tous nos campus</div>
+      </div>
+      <div class="chiffre-item">
+        <div class="chiffre-number">3 000</div>
+        <div class="chiffre-label">offres de stages et d'emploi chaque année</div>
+      </div>
+      <div class="chiffre-item">
+        <div class="chiffre-number">70 ans</div>
+        <div class="chiffre-label">d'expérience aux côtés de nos diplômés et de nos entreprises partenaires</div>
+      </div>
+      <div class="chiffre-item">
+        <div class="chiffre-number">20 000</div>
+        <div class="chiffre-label">alumni influents répartis dans 71 pays</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPUS -->
+<section class="section campus reveal">
+  <div class="section-inner">
+    <div class="section-tag">Campus</div>
+    <h2 class="section-title">Votre Campus<br>à <span>La Défense</span></h2>
+    <div class="campus-grid">
+      <div class="campus-text">
+        <p>Un campus à Paris la Défense-Puteaux : Au cœur de la Défense et de la ville, il est à proximité de nombreuses infrastructures sportives et culturelles.</p>
+        <p>À la pointe de l'enseignement « phygital », il offre des espaces de travail modulables favorisant collaboration, créativité et apprentissage. En accord avec nos valeurs, il a une faible empreinte carbone. Pour le bien-être et la qualité de travail de nos étudiants, chaque étage dispose de « learning bubbles ». Tableaux interactifs, installations vidéo sont les équipements du quotidien de chaque apprenant.</p>
+      </div>
+      <div class="campus-video">
+        <iframe src="https://www.youtube.com/embed/jMeHOAPMa3U?wmode=opaque" title="EDC Paris Business School - Campus" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <div class="footer-cta-inner">
+    <h2>Prêt à propulser votre carrière<br>dans le digital ?</h2>
+    <a href="#form-section" class="footer-cta-btn">
+      DEMANDE D'INFOS
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- RGPD -->
+<section class="rgpd">
+  <div class="rgpd-inner">
+    <button class="rgpd-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      Protection des données personnelles
+    </button>
+    <div class="rgpd-content">
+      <p>Association EDC, école de Commerce privée française, accorde une grande importance à la protection de vos données à caractère personnel. Sur la base de votre consentement que vous manifestez en complétant ce formulaire, Association EDC recueille vos données à caractère personnel afin de traiter votre demande et vous contacter afin de vous communiquer des informations sur le programme grande école ainsi que des informations sur les actualités et événements de l'école correspondants à ce programme. Association EDC conservera vos données pour une durée n'excédant pas celle nécessaire à la finalité énoncée ci-dessus sans que cette durée puisse excéder 3 ans à compter de votre dernier contact avec Association EDC.</p>
+      <p>Conformément à la loi Informatique et Libertés du 6 janvier 1978 modifiée et au Règlement (UE) 2016/679 relatif à la protection des données à caractère personnel, vous disposez des droits suivants sur vos données : droit d'accès, droit de rectification, droit à l'effacement (droit à l'oubli), droit à la limitation du traitement, droit à la portabilité. Vous pourrez également retirer votre consentement à tout moment et sans frais et vous inscrire sur la liste d'opposition au démarchage téléphonique.</p>
+      <p>Pour exercer vos droits, merci d'adresser votre courrier RAR à l'adresse suivante : DPO Planeta Formation France, 70, Galerie des Damiers, 92415 Courbevoie ou à l'adresse électronique suivante rgpd@planetaformation.fr.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>Tout droit réservé. EDC Paris Business School &reg; 2025</p>
+</footer>
+
+<script>
+// Header shadow on scroll
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 10);
+}, { passive: true });
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
